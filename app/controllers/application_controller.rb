@@ -14,6 +14,18 @@ class ApplicationController < ActionController::Base
 
     #render({:html=>"<h1>Hello,world!</h1>". html_safe })
 
+    @comp_move = ["rock", "paper", "scissors"].sample 
+
+     #<h2>They played  <%= comp_move %>!</h2>
+
+    if @comp_move == "rock" 
+       @outcome = "tied"
+    elsif @comp_move == "paper" 
+        @outcome ="lost"
+     elsif @comp_move == "scissors"
+         @outcome = "won"
+     end 
+
     render({:template =>"game_templates/user_rock.html.erb" })
   end
   def play_paper
@@ -43,7 +55,7 @@ class ApplicationController < ActionController::Base
      elsif @comp_move == "scissors"
          @outcome = "tied"
      end 
-    render({:template=>"game_templates/user_paper.html.erb" })           
+    render({:template=>"game_templates/user_scissors.html.erb" })           
 
   end
 end
