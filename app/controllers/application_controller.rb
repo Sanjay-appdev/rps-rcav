@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   # Add your actions below this line
   # ================================
-  def homepage
+  def Rules
     render({:template =>"game_templates/rules.html.erb"})   
   end       
 
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 
     #render({:html=>"<h1>Hello,world!</h1>". html_safe })
 
-    @comp_move = ["rock", "paper", "scissors"].sample 
+     @comp_move = ["rock", "paper", "scissors"].sample 
 
      #<h2>They played  <%= comp_move %>!</h2>
 
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
     render({:template =>"game_templates/user_rock.html.erb" })
   end
   def play_paper
-    @comp_move = ["rock", "paper", "scissors"].sample 
+       @comp_move = ["rock", "paper", "scissors"].sample 
 
      #<h2>They played  <%= comp_move %>!</h2>
 
@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
     render({:template=>"game_templates/user_paper.html.erb" })           
 
   end
-  def play_scissors
+   def play_scissors
     @comp_move = ["rock", "paper", "scissors"].sample 
 
      #<h2>They played  <%= comp_move %>!</h2>
@@ -56,6 +56,5 @@ class ApplicationController < ActionController::Base
          @outcome = "tied"
      end 
     render({:template=>"game_templates/user_scissors.html.erb" })           
-
+   end
   end
-end
